@@ -1,8 +1,11 @@
 import os
 import requests
 
-fileutility = requests.get("https://raw.githubusercontent.com/iliketoeatnachos/center-os/main/libraries/fileutility/fileutility.py").content
-exec(fileutility)
+try:
+    fileutility = requests.get("https://raw.githubusercontent.com/iliketoeatnachos/center-os/main/libraries/fileutility/fileutility.py").content
+    exec(fileutility)
+except:
+    print("An error occurred while getting temporary script.")
 
 def get(type, name):
     if type == "package":

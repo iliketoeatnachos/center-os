@@ -17,6 +17,13 @@ def create(type, directory):
 
 def delete(directory):
     try:
-        os.remove(direcotry)
+        os.remove(directory)
     except:
         print("An error occurred while deleting file/folder.")
+
+def write(directory, text):
+    try:
+        with open(directory) as file:
+            file.write(text)
+    except:
+        print("An error occurred while writing file.")

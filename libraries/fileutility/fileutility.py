@@ -7,11 +7,13 @@ def create(type, directory):
         except:
             print("An error occurred while creating file.")
     
-    if type == "folder":
+    elif type == "folder":
         try:
             os.mkdir(directory)
-        else:
+        except:
             print("An error occurred while creating folder.")
+    else:
+        print('"{type}" not a type that can be created.')
 
 def delete(directory):
     try:
